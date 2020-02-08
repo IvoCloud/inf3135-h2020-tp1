@@ -1,12 +1,16 @@
 # Travail pratique 
 
+ **INF 3135**
+
 ## Description
 
+  C'est le premier TP du cours _INF3135_. Ce programme fais 
+  des tests des fonctions liées au système de contrôle de l'avion _Boeing_ _737_ _Max_.
    
 ---
 ## Auteur
 
-Ivaylo Ivanov
+**Ivaylo Ivanov**
 ---
 ## Fonctionnement
 
@@ -21,7 +25,7 @@ Ivaylo Ivanov
   Ce projet contient les fichiers suivants:
   * `README.md` C'est le fchier actuel avec une description du projet.
   * `flop.o` Ect un fichier binaire en **C** qui contient les implementation des fonctions
-qui sont testée.
+  qui sont testée.
   * `flop.h` est un fichier _header_ en **C** qui contient les prototypes des fonctions dans `flip.o`
   * `tp.1` est un fichier **C** qui utilise _cUnit_ pour tester `flip.o` et qui contient _`main()`_.
 
@@ -33,8 +37,7 @@ qui sont testée.
 ---
 ## Status
 
- Le projet est presque terminé. Il reste a finirle README.md
-
+ Le projet est terminé.
 ---
 ## Autoevaluation
 
