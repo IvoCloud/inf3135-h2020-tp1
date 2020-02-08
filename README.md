@@ -33,7 +33,7 @@ qui sont testée.
 ---
 ## Status
 
- Le projet est terminé
+ Le projet est presque terminé. Il reste a finirle README.md
 
 ---
 ## Autoevaluation
