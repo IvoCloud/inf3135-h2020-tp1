@@ -10,7 +10,7 @@
 ---
 ## Auteur
 
-**Ivaylo Ivanov**
+  **Ivaylo Ivanov**
 ---
 ## Fonctionnement
 
@@ -37,7 +37,7 @@
 ---
 ## Status
 
- Le projet est terminé.
+  Le projet est terminé.
 ---
 ## Autoevaluation
 
