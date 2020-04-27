@@ -1,3 +1,6 @@
+#ifndef __MALIB_H__
+#define __MALIB_H__
+
 typedef unsigned long int time_tp;
 
 typedef enum {VOLET=11,SH,AI}Sensor_t;
@@ -44,3 +47,4 @@ void cmd(int argc,char* argv[], Info_t* info);
 
 bool mode_tranquille(int argc, char* argv[]);
 
+#endif // __MALIB_H__

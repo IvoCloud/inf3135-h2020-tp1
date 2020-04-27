@@ -1,3 +1,9 @@
+/*
+	INF3135 Hiiver 2020
+	Ivaylo Ivanov
+	TP3 tp3.c
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -133,18 +139,21 @@ void cmd(int argc,char* argv[], Info_t* info){
     printf("-----------------\n");
     
     if(i){
-        printf("Transactions non valides: %d\n", info->trx_recues-info->trx_valide);
-        printf("Timestamp invalides: %d\n", info->err_time);
+        printf("Transactions non renonnues\n");
+        printf("Transactions non valides: %d\n", info->trx_non_valide);
+        printf("Timestamp non valide: %d\n", info->err_time);
         printf("-----------------\n");
     }
     if(d){
+        printf("Information detaillee\n");
         for(index;index<5;++index){
             printf("Transaction no. %d : %d\n", index+1,info->trx_types[index]);
         }
         printf("-----------------\n");
     }
     if(s){
-        printf("Transactions valides: %d\n", info->trx_valide);
+        printf("Information sommaire\n");
+        printf("Transactions valides: %d\n", (info->trx_recues-(info->trx_non_valide+info->err_time)));
         printf("Transactions recues: %d\n", info->trx_recues);
         printf("-----------------\n");
     }

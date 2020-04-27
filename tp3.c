@@ -1,10 +1,8 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
+/*
+	INF3135 Hiiver 2020
+	Ivaylo Ivanov
+	TP3 tp3.c
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,12 +24,12 @@ int main(int argc, char *argv[]){
     int transaction;
 	
 	version_t version;
-	flop_version(&version);
+ 	flop_version(&version);
     
     bool etat_tranquille = mode_tranquille(argc, argv);
-	if(!etat_tranquille){
-		printf("Version #: %c.%c.%d",version.major,version.minor,version.build);
-	}
+ 	if(!etat_tranquille){
+ 		printf("Version #: %c.%c.%d",version.major,version.minor,version.build);
+ 	}
     
     Capteur_t AI_A1 = {"A1",0.0,0,0,true};
     Capteur_t AI_A2 = {"A2",0.0,0,0,true};
@@ -51,12 +49,7 @@ int main(int argc, char *argv[]){
         data[1] = strtok(NULL, " ");
         data[2] = strtok(NULL, " ");
         data[3] = strtok(NULL, " ");
-        // printf(">> %s ",data[0]);
-        // printf("%s ",data[1]);
-        // printf("%s ",data[2]);
-        // printf("%s",data[3]);
-        // printf("\n");
-  //Validate timestamp
+  	//Validate timestamp
         ++infos.trx_recues;
         if(validation_timestamp(data[0],timestamp)){
             timestamp = atoi(data[0]);
@@ -67,7 +60,7 @@ int main(int argc, char *argv[]){
                 //TRX 01
                         etat = atoi(data[2]);
                 }else if(transaction==2){
-                //02 Read AI \ handle ERROR
+                //TRX 02 Read AI
                     sensor_valeur = atof(data[3]);
                     if((strcmp(data[2],"A1")==0)&&AI_A1.actif){
                         if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)){
@@ -100,6 +93,7 @@ int main(int argc, char *argv[]){
                             AI_A3.actif = false;
                         }
                     }else if((strcmp(data[2],"A2")==0)&&AI_A2.actif){
+					//02 A2
                         if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)){
                             strcpy(message_out,log_error(&AI_A2,timestamp, AI, AI_A2.id));
                         }else{
@@ -129,8 +123,8 @@ int main(int argc, char *argv[]){
                             AI_A2.actif = false;
                             AI_A3.actif = false;
                         }
-                    //02 A3
                     }else if(strcmp(data[2],"A3")==0){
+					//02 A3
                         if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)){
                             strcpy(message_out,log_error(&AI_A3,timestamp, AI, AI_A3.id));
                         }else{
@@ -295,14 +289,13 @@ int main(int argc, char *argv[]){
                             }
                         break;
                     }
-                }
+                }//MAIN LOOP
                 ++infos.trx_types[transaction-1];
                 if(sys_en_erreur>=2&&mcas){
                     strcpy(mcas_msg,set_mcas("OFF", &mcas));
                 }
             }else{
                 ++infos.trx_non_valide;
-                printf("HERE");
             }//validation_format_transaction
         }else{
             ++infos.err_time;
@@ -316,6 +309,4 @@ int main(int argc, char *argv[]){
     }//while read
     cmd(argc,argv,&infos);
 }
-
-
 
