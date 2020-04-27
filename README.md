@@ -57,7 +57,7 @@ Utiliser 'text' avec tp3:
 ~~~bash
 cat text | ./tp3 -d -i -s> output 
 ~~~
-Resultat
+Résultat
 ~~~bash
 $ cat output 
 Version #: ..1000906 13 100 A1
@@ -92,33 +92,47 @@ Transactions recues: 10
    ## Contenu du projet
 
    #### Makefile : Contient des commandes pour gérer les dépendances:
-     : `make tp3` Crée l'exécutable *tp3*
-     : `make lib` Télécharge les fichiers *flop.h* et *flop.o*
-     : `make`		Pour starter l'exécutable tp3 en mode interactif `./tp3`
-	:  `make clean` Pour effacer les fichiers `*.o` et `flop.h`     
+   
+   `make tp3` Crée l'exécutable *tp3*
+   `make lib` Télécharge les fichiers *flop.h* et *flop.o*
+   `make` Pour starter l'exécutable tp3 en mode interactif `./tp3`
+    `make clean` Pour effacer les fichiers `*.o` et `flop.h`  
+	    
 #### malib.h : Contient les prototypes de `malib.c`
 #### malib.c : Contient les fonctions créés par moi pour ce TP
 #### flop.h et flop.c : Contient les fonctions fournies par le professeur
-#### tp3.c : Contient le programme principar et la fonction `main`
+#### tp3.c : Contient le programme principal et la fonction `main`
 #### 'text' est un fichiers text pour passer des test et les écrire dans 'output'
 #### Reflection est un fichier qui décris mon cheminement du cours INF3135
 
    ## Processus de réflexion et démarche 
-   ##### Decris en détail dans le fichier 'Reflection'.
+   ##### Décris en détail dans le fichier 'Reflection'.
  Ma démarche pour le TP3 était de commencer par refaire le TP2 au complet et m'assurer que
- le programme est fonctionnel et conforme aux exigences. J'ai refait mon `Makefile et j'ai
+ le programme est fonctionnel et conforme aux exigences. J'ai refait mon `Makefile` et j'ai
  déplace mes fonctions dans `malib.c` et `malib.h`.
  
  Une fois que le projet fonctionnait selon le TP2, j'ai modifie `tp3.c`, `malib.c`, et `malib.h`pour les nouvelles exigences du TP3.
 
-Le plus gros défi etait de transiger du mode TP2 au mode TP3 et surtout avec l'arument `-t mode tranquille`, car 
-   <inclure par référence le fichier reflexion.md>
+Le plus gros défi était de transiger du mode TP2 au mode TP3 et surtout avec l'argument 
+`-t mode tranquille`, car avant de débuter le TP3, j'avais mis mes `printf()` pour les messages d'erreur dans les foncions ex. `log_erreur()`, `log_err_valeur()`
+
+J'avais soit l'option de passer un paramètre `bool` pour valider si la fonction va imprimer le message ou non, ou de faire sortir tous les `printf()` en dehors de mes fonctions.
+J'ai décide de sortir mes `printf()` de `malib.c` et faire un seul `printf()` à la fin de la fonction `main()` dans `tp3.3`
+
+J'ai choisi cette option, car j'aurai moins de chances de me tromper et oublier de passer un paramètre `bool` ou de gérer la condition du `bool` que de faire sortir mes `printf()` en changeant les  `void log_erreur()`, `void log_err_valeur()` à `int log_erreur()`et 
+`int log_err_valeur()` et changer les `printf()`avec `sprintf()`
 
    ## Références
 
-   <citez vos sources ici>
+[Github inf315](https://github.com/guyfrancoeur/INF3135_H2020)
+[Cplusplus](http://www.cplusplus.com/)
+[OnlineGDB](https://www.onlinegdb.com/online_c_compiler)
+[GeeksForGeeks](https://www.geeksforgeeks.org/)
+<sub><sup>[StackOverflow](https://github.com/guyfrancoeur/INF3135_H2020) </sup></sub>
+</Jaifaitmespushups>
+
+
 
    ## Statut et auto-évaluation
 
-   <indiquez si le projet est complété ou s'il y a des bogues>
-   <mon travail vaut quelques points en fonction du barème>
+   Le projet est complété, mais j'aurais aimé améliorer mon code, car il y a de la répétition du code.
