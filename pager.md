@@ -55,7 +55,7 @@ Le cours et le professeur sont très bon ! Mr. Guy Francoeur est quelqu'un ave
 Le cours de **C** était très utile pour moi, car j'aurai aimé développer mes connaissances plus en **C** et **C++** et possiblement faire des projets personnels. C'est une bonne base pour commencer !
 
    ## Bibliographie
-[Udemy](https://www.udemy.com/) Certains cours en *C*
+[Udemy](https://www.udemy.com/) Certains cours en *C*\
 [Github inf315](https://github.com/guyfrancoeur/INF3135_H2020)
 [Cplusplus](http://www.cplusplus.com/)
 [OnlineGDB](https://www.onlinegdb.com/online_c_compiler)
