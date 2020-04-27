@@ -56,9 +56,9 @@ Le cours de **C** était très utile pour moi, car j'aurai aimé développer mes
 
    ## Bibliographie
 [Udemy](https://www.udemy.com/) Certains cours en *C*\
-[Github inf315](https://github.com/guyfrancoeur/INF3135_H2020)
-[Cplusplus](http://www.cplusplus.com/)
-[OnlineGDB](https://www.onlinegdb.com/online_c_compiler)
-[GeeksForGeeks](https://www.geeksforgeeks.org/)
+[Github inf315](https://github.com/guyfrancoeur/INF3135_H2020)\
+[Cplusplus](http://www.cplusplus.com/)\
+[OnlineGDB](https://www.onlinegdb.com/online_c_compiler)\
+[GeeksForGeeks](https://www.geeksforgeeks.org/)\
 <sub><sup>[StackOverflow](https://github.com/guyfrancoeur/INF3135_H2020) </sup></sub>
 </Jaifaitmespushups>
