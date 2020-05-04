@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include "flop.h"
+#include "./data/flop.h"
 #include "malib.h"
 
 char* log_error(Capteur_t* capteur, time_tp timestamp, Sensor_t sensor, char* info){
@@ -75,7 +75,7 @@ bool validation_format_transaction(char* data[4]){
 bool validation_timestamp(char* time, time_tp timestamp){
     return (atoi(time)>timestamp);
 }
-bool valider_angle_conforme_AI(EtatAppareil_t etat, Capteur_t* capteur,time_tp timestamp, float valeur){
+bool valider_angle_conforme_AI(EtatAppareil_t etat, float valeur){
     bool conforme=false;
     switch(etat){
         case 0:
@@ -101,20 +101,6 @@ bool valider_angle_conforme_AI(EtatAppareil_t etat, Capteur_t* capteur,time_tp t
     }
     return conforme;
 }
-bool valider_angle_conforme_VOL(Capteur_t* capteur,time_tp timestamp, float valeur){
-    bool conforme=false;
-    if(volet_conforme(valeur)){
-        conforme = true;
-    }
-    return conforme;
-}
-bool valider_angle_conforme_SH(Capteur_t* capteur,time_tp timestamp, float valeur){
-    bool conforme=false;
-    if(stabilisateur_horizontal_conforme_v3(valeur)){
-        conforme = true;
-    }
-    return conforme;
-}
 
 bool mode_tranquille(int argc, char* argv[]){
     int index = argc-1;
@@ -128,7 +114,6 @@ void cmd(int argc,char* argv[], Info_t* info){
     bool i = false;
     bool d = false;
     bool s = false;
-    bool t = false;
     int index = argc-1;
     for(index; index!=0;--index){
         if(strcmp("-i",argv[index])==0) i=true;

@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "flop.h"
+#include "./data/flop.h"
 #include "malib.h"
 
 int main(int argc, char *argv[]){
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
                         if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)){
                             strcpy(message_out,log_error(&AI_A1,timestamp, AI, AI_A1.id));
                         }else{
-                            if(valider_angle_conforme_AI(etat, &AI_A1, timestamp, sensor_valeur)){
+                            if(valider_angle_conforme_AI(etat, sensor_valeur)){
                                 if(AI_A2.actif){
                                     if(!angle_incidence_marge_v1(AI_A1.valeur, AI_A2.valeur)){
                                         strcpy(message_out,log_error_valeur(&AI_A1, timestamp, AI, "A1_MARGE"));
@@ -97,7 +97,7 @@ int main(int argc, char *argv[]){
                         if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)){
                             strcpy(message_out,log_error(&AI_A2,timestamp, AI, AI_A2.id));
                         }else{
-                           if(valider_angle_conforme_AI(etat, &AI_A2, timestamp, sensor_valeur)){
+                           if(valider_angle_conforme_AI(etat, sensor_valeur)){
                                 if(AI_A1.actif){
                                     if(!angle_incidence_marge_v1(AI_A1.valeur, AI_A2.valeur)){
                                         strcpy(message_out,log_error_valeur(&AI_A1,timestamp, AI, "A2_MARGE"));
@@ -128,7 +128,7 @@ int main(int argc, char *argv[]){
                         if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)){
                             strcpy(message_out,log_error(&AI_A3,timestamp, AI, AI_A3.id));
                         }else{
-                           if(valider_angle_conforme_AI(etat, &AI_A3, timestamp, sensor_valeur)){
+                           if(valider_angle_conforme_AI(etat, sensor_valeur)){
                                 if(!AI_A1.actif&&AI_A2.actif){
                                     if(!angle_incidence_marge_v1(AI_A2.valeur, sensor_valeur)){
                                         strcpy(message_out,log_error_valeur(&AI_A3,timestamp, AI, "A3_MARGE"));
@@ -167,7 +167,7 @@ int main(int argc, char *argv[]){
                             strcpy(message_out,log_error(&capteur_temp,timestamp, VOLET, capteur_temp.id));
                         }else{
                             sensor_valeur = atof(data[3]);
-                            if(capteur_temp.actif&&valider_angle_conforme_VOL(&capteur_temp, timestamp, sensor_valeur)){
+                            if(capteur_temp.actif&&volet_conforme(sensor_valeur)){
                                 if(!(volet_ouverture_marge_v3(sensor_valeur, VOL_D.valeur)&&
                                 volet_ouverture_marge_v3(sensor_valeur, VOL_G.valeur))){
                                     char info[7] = "MARGE ";
@@ -204,11 +204,11 @@ int main(int argc, char *argv[]){
                         }else if((strcmp(data[2],"D")==0)&&SH_D.actif){
                             capteur_temp = SH_D;
                         }
-                        if((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0)&&(SH_D.actif||SH_G.actif)){
+                        if(((strcmp(data[3],ERROR)==0)||(strcmp(data[3],"ERROR")==0))&&(SH_D.actif||SH_G.actif)){
                             strcpy(message_out,log_error(&capteur_temp,timestamp, SH, capteur_temp.id));
                         }else{
                             sensor_valeur = atof(data[3]);
-                            if(capteur_temp.actif&&valider_angle_conforme_SH(&capteur_temp, timestamp, sensor_valeur)){
+                            if(capteur_temp.actif&&stabilisateur_horizontal_conforme_v3(sensor_valeur)){
                                 if(!(stabilisateur_horizontal_marge_v3(sensor_valeur, SH_D.valeur)&&
                                 stabilisateur_horizontal_marge_v3(sensor_valeur, SH_G.valeur))){
                                     char info[7] = "MARGE ";

@@ -33,11 +33,7 @@ char* set_mcas(char* status, bool* mcas);
 
 bool volet_conforme(float longueur);
 
-bool valider_angle_conforme_AI(EtatAppareil_t etat, Capteur_t* capteur,time_tp timestamp, float valeur);
-
-bool valider_angle_conforme_SH(Capteur_t* capteur, time_tp timestamp, float valeur);
-
-bool valider_angle_conforme_VOL(Capteur_t* capteur, time_tp timestamp, float valeur);
+bool valider_angle_conforme_AI(EtatAppareil_t etat, float valeur);
 
 bool validation_format_transaction(char* data[4]);
 
