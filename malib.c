@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include "./data/flop.h"
+#include "flop.h"
 #include "malib.h"
 
 char* log_error(Capteur_t* capteur, time_tp timestamp, Sensor_t sensor, char* info){

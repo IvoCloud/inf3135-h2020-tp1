@@ -12,7 +12,7 @@ test-tp3:
 lib:
 	mkdir data
 	wget -nv https://github.com/guyfrancoeur/INF3135_H2020/raw/master/tp/tp2.zip -O ./data/tp2-v2.zip
-	unzip -q ./data/tp2-v2.zip -d ./data
+	unzip -n -q ./data/tp2-v2.zip -d ./data
 
 clean:
 	rm -r data
