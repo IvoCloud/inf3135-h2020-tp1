@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "./data/flop.h"
+#include "flop.h"
 #include "malib.h"
 
 int main(int argc, char *argv[]){
