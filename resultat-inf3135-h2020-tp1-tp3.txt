@@ -1,0 +1,28 @@
+1 : reussi 0 pts
+2 : reussi 1 pts
+3 : reussi 9 pts
+4 : reussi 0 pts
+5 : echec
+6 : echec
+7 : reussi 0 pts
+8 : echec
+9 : reussi 1 pts
+10 : reussi 0 pts
+11 : reussi 1 pts
+12 : reussi 0 pts
+13 : reussi 1 pts
+14 : reussi 0 pts
+15 : reussi 1 pts
+16 : reussi 0 pts
+17 : reussi 0 pts
+18 : reussi 0 pts
+19 : echec
+20 : echec
+21 : echec
+22 : echec
+23 : echec
+24 : reussi 0 pts
+25 : reussi 0 pts
+26 : reussi 0 pts
+Note (total) pour IVAI08039506 dans inf3135-h2020-tp1: 14
+IVAI08039506	14
